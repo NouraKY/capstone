@@ -8,7 +8,7 @@ pipeline {
         }
         stage('buid docker'){
               steps { 
-           sh ' app = docker.build("nalyahya/capstone")'
+           app = docker.build("nalyahya/capstone")
               }
         }
 
