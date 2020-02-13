@@ -6,10 +6,8 @@ pipeline {
                 sh 'tidy -q -e *.html' 
             }
         }
-        stage('buid docker'){
-              steps { 
-           app = docker.build("nalyahya/capstone")
-              }
+        stage('buid docker'){  
+           app = docker.build("nalyahya/capstone")    
         }
 
         stage('upload image'){
