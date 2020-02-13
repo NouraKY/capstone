@@ -7,7 +7,9 @@ pipeline {
             }
         }
         stage('buid docker'){  
-           app = docker.build("nalyahya/capstone")    
+          steps{
+            app = docker.build("nalyahya/capstone") 
+          }
         }
 
         stage('upload image'){
