@@ -12,7 +12,7 @@ pipeline {
           steps{
             script{
             
-             docker.build("capstone") 
+             docker.build("norah/capstone") 
 
             }
           }
@@ -22,8 +22,8 @@ pipeline {
         steps {
    script{
             docker.withRegistry('https://147005956006.dkr.ecr.us-west-2.amazonaws.com' , 'ecr:us-west-2:eksuser')  {
-              sh 'docker tag capstone:latest 147005956006.dkr.ecr.us-west-2.amazonaws.com/capstone:latest'
-              sh 'docker push 147005956006.dkr.ecr.us-west-2.amazonaws.com/capstone:latest'
+              sh 'docker tag norah/capstone:latest 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah/capstone:latest'
+              sh 'docker push 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah/capstone:latest'
             }
             }
               }
