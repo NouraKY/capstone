@@ -22,8 +22,8 @@ pipeline {
         steps {
    script{
             docker.withRegistry('https://147005956006.dkr.ecr.us-west-2.amazonaws.com' , 'ecr:us-west-2:eksuser')  {
-              sh 'sudo docker tag capstone:latest 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah/capstone:latest'
-              sh 'sudo docker push 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah/capstone:latest'
+              sh 'docker tag capstone:latest 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah/capstone:latest'
+              sh 'docker push 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah/capstone:latest'
             }
             }
               }
