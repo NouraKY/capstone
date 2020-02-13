@@ -12,7 +12,7 @@ pipeline {
           steps{
             script{
             
-             docker.build("nalyahya/capstone") 
+             docker.build("capstone") 
 
             }
           }
@@ -22,8 +22,8 @@ pipeline {
         steps {
             
             sh '$(aws ecr get-login --no-include-email --region us-west-2)'
-            sh 'sudo docker tag nalyahya/capstone:latest 147005956006.dkr.ecr.us-west-2.amazonaws.com/nalyahya/capstone:latest'
-            sh 'sudo docker push 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah:latest'
+            sh 'sudo docker tag capstone:latest 147005956006.dkr.ecr.us-west-2.amazonaws.com/capstone:latest'
+            sh 'sudo docker push 147005956006.dkr.ecr.us-west-2.amazonaws.com/capstone:latest'
               }
         }
     }
