@@ -1,6 +1,6 @@
    
-node {
-    def app
+pipeline {
+    
     agent any
     stages {
         stage('lint'){
@@ -10,7 +10,7 @@ node {
         }
         stage('buid docker'){  
           steps{
-            app = docker.build("nalyahya/capstone") 
+             docker.build("nalyahya/capstone") 
           }
         }
 
