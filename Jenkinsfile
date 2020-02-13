@@ -1,5 +1,5 @@
    
-pipeline {
+node {
     def app
     agent any
     stages {
