@@ -1,5 +1,5 @@
+       def app
 pipeline {
-        def app
     agent any
     stages {
         stage('lint'){
