@@ -10,7 +10,11 @@ pipeline {
         }
         stage('buid docker'){  
           steps{
+            script{
+            
              docker.build("nalyahya/capstone") 
+
+            }
           }
         }
 
