@@ -8,7 +8,7 @@ pipeline {
         }
         stage('buid docker'){
               steps { 
-           sh 'sudo docker build --tag=capstone .'
+           sh ' app = docker.build("nalyahya/capstone")'
               }
         }
 
