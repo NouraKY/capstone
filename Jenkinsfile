@@ -2,6 +2,7 @@
 pipeline {
     
     agent any
+    
     stages {
         stage('lint'){
             steps {
@@ -28,5 +29,13 @@ pipeline {
             }
               }
         }
+stage('deploy to k8'){
+steps{
+
+    sh 'kubectl apply -f blue-deployment.yml'
+}
+
+}
+
     }
 }
