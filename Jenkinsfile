@@ -34,7 +34,6 @@ stage('Set current context') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'eksuser') {
 					sh '''
-                        aws eks --region us-west-2 update-kubeconfig --name capstonecluste
 						kubectl config use-context arn:aws:eks:us-west-2:147005956006:cluster/capstonecluste
 					'''
 				}
