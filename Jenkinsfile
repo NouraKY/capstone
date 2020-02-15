@@ -35,6 +35,7 @@ pipeline {
 stage('Deploying to EKS') {
             steps {
                     withAWS(credentials: 'eksuser', region: 'us-west-2') {
+                            sh ' pip3 install awscli --upgrade'
                             sh "aws eks --region us-west-2 update-kubeconfig --name capstonecluster"
                             sh 'kubectl apply -f blue-deployment.yml'
                         }
