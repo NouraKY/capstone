@@ -40,7 +40,6 @@ stage('Deploying to EKS') {
                             sh ' aws --version'
                             sh "aws eks --region us-west-2 update-kubeconfig --name capstonecluster"
                             sh 'kubectl apply -f blue-deployment.yml'
-                            sh ' kubectl apply -f b-service.yml'
                         }
 
 
