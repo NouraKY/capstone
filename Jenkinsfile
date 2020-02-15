@@ -30,24 +30,16 @@ pipeline {
               }
         }
 
-stage('Set current context') {
-			steps {
-				withAWS(region:'us-west-2', credentials:'eksuser') {
-					sh '''
-						kubectl config use-context arn:aws:eks:us-west-2:147005956006:cluster/capstonecluster
-					'''
-				}
-			}
-		}
 
 
-stage('deploy to k8'){
-steps{
-
-    sh 'kubectl apply -f blue-deployment.yml'
-}
-
-}
+stage('Deploying to EKS') {
+            steps {
+                    withAWS(credentials: 'eksuser', region: 'us-west-2') {
+                            sh "aws eks --region us-west-2 update-kubeconfig --name capstonecluster"
+                            sh 'kubectl apply -f blue-deployment.yml'
+                        }
+            }
+        }
 
     }
 }
