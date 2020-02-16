@@ -39,18 +39,7 @@ stage('Deploying to EKS') {
                             sh ' pip3 install awscli --upgrade'
                             sh ' aws --version'
                             sh "aws eks --region us-west-2 update-kubeconfig --name capstonecluster"
-                            sh 'kubectl apply -f blue-deployment.yml'
-                        }
-
-
-            }
-        }
-
-        stage('Add Service') {
-            steps {
-                    withAWS(credentials: 'eksuser', region: 'us-west-2') {
-                            echo "appying service"
-                            sh ' kubectl apply -f b-service.yml'
+                            sh 'kubectl apply -f deployment.yml'
                         }
 
 
