@@ -25,7 +25,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: norah
+      - name: nginx
         image: 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah:latest
         ports:
         - containerPort: 8080
