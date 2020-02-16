@@ -1,31 +1,31 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: norah
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 8080
   selector:
-    app: nginx
+    app: norah
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: norah
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: norah
   template:
     metadata:
       labels:
-        app: nginx
+        app: norah
     spec:
       containers:
-      - name: nginx
+      - name: norah
         image: 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah:latest
         ports:
         - containerPort: 8080
