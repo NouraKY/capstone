@@ -28,4 +28,4 @@ spec:
       - name: norah
         image: 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah
         ports:
-        - containerPort: 80
+          - containerPort: 80
