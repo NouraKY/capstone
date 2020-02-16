@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: norah
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: norah
@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
       - name: norah
-        image: 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah
+        image: 147005956006.dkr.ecr.us-west-2.amazonaws.com/norah:latest
         ports:
-          - containerPort: 80
+        - containerPort: 8080
