@@ -20,7 +20,7 @@ spec:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 2
-      maxUnavilable: 1
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: norah
